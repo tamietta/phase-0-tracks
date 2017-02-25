@@ -61,10 +61,10 @@
     -   Defines a short portion of text. This can be equated to an inline version of `<div></div>`.
        
 *   `<select></select>`
-    -   Defines a drop-down box populated by pre-defined `<option>` elements. Each `<option>` element represents a pre-defined choice.
+    -   Defines a drop-down box populated by `<option>` elements. Each `<option>` element represents a pre-defined choice.
      
 *   `<h2></h2>`
-    -   Defines a heading of with a secondary ranking. The headings hierarchy ranges from `<h1>`, the highest ranking, to `<h6>`, the lowest.
+    -   Defines a heading of secondary ranking. The headings hierarchy ranges from `<h1>`, the highest ranking, to `<h6>`, the lowest.
        
 *   `<ol></ol>`
     -   Defines an unordered list.
