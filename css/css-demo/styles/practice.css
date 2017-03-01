@@ -1,0 +1,36 @@
+#contact-info {
+    font-size: 0.8em;
+}
+
+.job {
+    background-color: #e9e5dc;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+ul.experience {
+    font-size: 0.8em;
+}
+
+p {
+    color: black;
+}
+
+/*
+    NOTE: < :not(selector) > 
+    - If :not(selector) selects any PARENT elements, all declared rules
+    will be applied to child elements. (Exceptions apply, e.g. position property,
+    which doesn't inherit by default.)
+    - If selector is a child element, parent's :not rule will also be applied,
+    unless selector is given an EXPLICIT (i.e. not default) style.
+*/
+
+:not(p) {
+    color: gray;
+}
+
+ul li:nth-child(3) {
+    font-weight: bold;
+}
