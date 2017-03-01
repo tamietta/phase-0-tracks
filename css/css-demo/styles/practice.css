@@ -18,9 +18,15 @@ p {
     color: black;
 }
 
+/*
+    NOTE: < :not(selector) > 
+    - If :not(selector) selects any PARENT elements, all declared rules
+    will be applied to child elements. (Exceptions apply, e.g. position property,
+    which doesn't inherit by default.)
+    - If selector is a child element, parent's :not rule will also be applied,
+    unless selector is given an EXPLICIT (i.e. not default) style.
+*/
 
-/*:not(selector) if selector not pre-defined, and :not selectors a parent element*/
-/*of selector, selector will also inherit rule.*/
 :not(p) {
     color: gray;
 }
