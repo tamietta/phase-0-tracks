@@ -13,3 +13,18 @@
 ul.experience {
     font-size: 0.8em;
 }
+
+p {
+    color: black;
+}
+
+
+/*:not(selector) if selector not pre-defined, and :not selectors a parent element*/
+/*of selector, selector will also inherit rule.*/
+:not(p) {
+    color: gray;
+}
+
+ul li:nth-child(3) {
+    font-weight: bold;
+}
