@@ -1,3 +1,17 @@
+Skip to content
+Features Explore Pricing
+This repository
+Search
+Sign in or Sign up
+ Watch 0  Star 0  Fork 1,006 Kivyy/phase-0-tracks
+forked from Devbootcamp/phase-0-tracks
+ Code  Pull requests 0  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathphase-0-tracks/css/responsive-design/style.css
+bc1c1dd  17 minutes ago
+@Kivyy Kivyy add css sheet to index
+1 contributor
+RawBlameHistory     
+72 lines (60 sloc)  925 Bytes
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -29,4 +43,44 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
+#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+  width: 756px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #external-links {
+    width: 756px;
+  }
+}
+
+@media screen and (min-width: 983px) {
+  body {
+    max-width: 100%;
+  }
+}
+
+body {
+   width: 100%;
+   Height: 100%;
 }
