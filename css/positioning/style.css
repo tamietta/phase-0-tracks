@@ -1,0 +1,27 @@
+img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#octopus {
+    padding-top: 60px;
+}
+
+#hat {
+    position: relative;
+    top: -340px;
+    left: 8px;
+}
+
+#glasses {
+    position: relative;
+    top: -353px;
+    left: 5px;
+    /*compensates for empty space created by position: relative*/
+    margin-bottom: -240px;
+}
+
+p {
+    text-align: center;
+}
