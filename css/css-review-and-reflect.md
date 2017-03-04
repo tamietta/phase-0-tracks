@@ -121,8 +121,6 @@ element#id {
 }
 ```
 
-
-
 **Name two CSS techniques that assist in responsive design.**
 
 * **Fluid Widths and Maximum/Minimum Widths**    
