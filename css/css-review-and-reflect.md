@@ -9,7 +9,7 @@
 **What are the three ways to link a CSS rule to an HTML document? Which one is the best and why?**
 
 * **External Style Sheet**    
-This is done by referencing the location of the external style sheet in a `<link>` tag. This must be included within the HTML's `<head>` element. This is most advisable method of the three. External style sheets facilitate reuse across an arbitrary number of HMTL files. They are also easily edited, independent of the HTML files, to which they are linked. In addition, they enable code modularity, essential for clean code maintenance. 
+This is done by referencing the location of the external style sheet using a `<link>` tag. This must be included within the HTML's `<head>` element. This is the most advisable method of the three. External style sheets facilitate reuse across an arbitrary number of HMTL files. They are also easily edited, independent of the HTML files to which they are linked. In addition, they enable code modularity, essential for clean code maintenance. 
 ```
 <head>
     <link rel="stylesheet", href="CSS_file_location", type="text/css">
@@ -36,7 +36,7 @@ This refers to the declaration of style rules for the whole HTML file within the
 ```
 
 * **Inline Styles**  
-Inline styles are style rules which are passed as values to an element's `style` attribute. Thus these rules are specfic only to element within which they are declared. They have the highest precedence of the three methods.
+Inline styles are style rules which are passed as values to an element's `style` attribute. These rules are specfic only to element within which they are declared. They have the highest precedence of the three methods.
 
 
 ```
@@ -68,7 +68,7 @@ The first code selects all `<section>` elements with the `class` attribute value
 ```
 
 * **Pseudo-Selector**  
-Pseudo-selectors are comprised of pseudo-classes and pseudo-elements. Pseudo-elements target a specific *portion* of an element (e.g the first line of a paragraph), whereas pseudo-classes target a state of an element (e.g. a visited link).
+Pseudo-selectors are comprised of pseudo-classes and pseudo-elements. Pseudo-elements target a specific *portion* of an element (e.g the first line of a paragraph), whereas pseudo-classes target a *state* of an element (e.g. a visited link).
 
 ``` 
     /* pseudo-element*/
@@ -76,7 +76,7 @@ Pseudo-selectors are comprised of pseudo-classes and pseudo-elements. Pseudo-ele
         color: blue;
     }
     
-    /* pseudo-element*/
+    /* pseudo-class*/
     li:nth-child(even) {
         background-color: yellow;
     }
@@ -90,7 +90,7 @@ Pseudo-selectors are comprised of pseudo-classes and pseudo-elements. Pseudo-ele
 
 **Explain and give an example of the cascading effect of CSS.**    
 
-* Multiple style sheets can be used to control the formatting of a HTML document. When rules targetting the same CSS property of the same element conflict with one another, a hierarchy of compliance is followed, cascading priority from the lowest to the highest. The hierachy can divided into three categories:
+* Multiple style sheets can be used to control the formatting of a HTML document. When rules targetting the same CSS property of the same element conflict with one another, a hierarchy of compliance is followed, which cascades priority from the lowest to the highest. The hierachy can be divided into three categories:
 
     - **CSS Ownership**
         1. Website author (Highest)
@@ -124,7 +124,7 @@ element#id {
 **Name two CSS techniques that assist in responsive design.**
 
 * **Fluid Widths and Maximum/Minimum Widths**    
-    - **Fluid** widths are widths defined in percentages of an element's parent element.
+    - **Fluid** widths are widths defined as a percentage of an element's parent element.
     - **Maximimum/Minimum** widths use the `max-width` or `min-width` property, which allow flexible rendering depending on the screen size.
 
 * **Media Queries**
@@ -136,7 +136,7 @@ The condition in the code below will be evaluated as true for mobile screens.
 @media only screen and (max-device-width: 480px) {
     h1 {
         width: 90%;
-        font-size: 2 em;
+        font-size: 2em;
     }
 }
 ```
