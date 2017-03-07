@@ -1,36 +1,38 @@
-#contact-info {
+/** {
+    outline: 1px solid red
+}*/
+section#contact-info {
     font-size: 0.8em;
 }
 
 .job {
     background-color: #e9e5dc;
-    border-radius: 20px;
-    padding: 5px;
+    border-radius: 0.4em;
+    padding: 20px;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-ul.experience {
+h3 {
+    margin: 0px auto;
+}
+
+ul.work-details {
+    margin-bottom: 0px;
     font-size: 0.8em;
 }
 
-p {
-    color: black;
+/*pseudo-selection example*/
+li:first-of-type {
+    color: red;
 }
 
-/*
-    NOTE: < :not(selector) > 
-    - If :not(selector) selects any PARENT elements, all declared rules
-    will be applied to child elements. (Exceptions apply, e.g. position property,
-    which doesn't inherit by default.)
-    - If selector is a child element, parent's :not rule will also be applied,
-    unless selector is given an EXPLICIT (i.e. not default) style.
-*/
-
-:not(p) {
-    color: gray;
+/*child selection*/
+section section {
+    color: blue;
 }
 
-ul li:nth-child(3) {
-    font-weight: bold;
+/*specific child selection with pseudo-selector*/
+section:last-child {
+    color: green;
 }

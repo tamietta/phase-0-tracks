@@ -13,7 +13,7 @@ h1#resume-title {
   margin-top: 70px;
 }
 
-section#contact-info p {
+#contact-info p {
   display: inline;
   padding-right: 20px;
   padding-left: 20px;

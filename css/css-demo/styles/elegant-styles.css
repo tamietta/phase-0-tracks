@@ -42,7 +42,7 @@ A given class can be used multiple times in a document.
 
 .experience-category, #resume-title {
   font-family: 'Dancing Script', cursive;
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 /* You can use a tag AND a class
@@ -62,5 +62,6 @@ an element of a certain class (the p
 is nested inside the contact-info section) */
 
 #contact-info p {
-  line-height: .8;
+  line-height: 0.8;
+  padding: 10px;
 }
