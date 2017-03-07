@@ -1,0 +1,61 @@
+ELEVATOR ALGORITHM
+
+If desired floor is greater than current floor:
+    - press up-arrow button.
+Else:
+    - press down-arrow button.
+
+Until elevator doors open:
+    - wait.
+
+Walk past open doors into elevator.
+
+If panel right of door has buttons with numbers:
+    - walk right to the panel.
+Else:
+    - walk left to the other panel.
+
+Start with the lowest button number.
+Until button number is equal to the desired floor number:
+    - move on to the button with the current button number plus 1.
+
+Press the button.
+Until the elevator doors open:
+    - wait.
+
+Walk past the open doors onto the new floor. You have arrived.
+
+
+MAKING A TELEPHONE CALL WITH AN IPHONE ALGORITHM
+
+Press round button below the iPhone screen.
+
+If the Passcode Screen pops up:
+    for each number in the password sequence:
+        - press the equivalent number on the Passcode Screen.
+
+Navigate to the 'Phone' icon.
+
+If returned screen is not the Keypad Screen:
+    - select the Keypad icon.
+
+For each number in the telephone number sequence:
+    - press the equivalent number on the Keypad Screen
+
+Press the green 'Dial' button below all the numbers.
+
+While the number is connecting:
+    - wait.
+
+If a human voice answers:
+    - say, "Hello, this is [name]. Am I speaking to [desired person's name]?"
+    - engage in intended conversation.
+Else if you hear the word, "voicemail":
+    - wait for the beep
+    - say your voicemail message.
+
+End call by pressing red "End Call" button on the screen.
+
+
+
+
