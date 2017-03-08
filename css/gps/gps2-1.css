@@ -1,3 +1,22 @@
-body {
-    background-color: pink;
-}`
+header{text-align: center;
+background-color: red;
+padding-bottom: 50px;
+margin-bottom: 30px;
+margin-left: 20px;
+border: 10px solid black;
+outline: 10px solid yellow;
+}
+.column-1{
+  display: table-cell;
+  width: 70%;
+  font-family: 'Iowan old style';
+  background-image: url(https://dwa5x7aod66zk.cloudfront.net/assets/labtocat-be5eee0434960a8f73e54910df8e87b8a5a3b2d651c0b301670c04a9cc26a70f.png)
+}
+.column-2{
+  display: table-cell;
+  width: 30%;
+  font-size: 150%;
+}
+footer{text-align: center;
+background-color: pink;
+}
