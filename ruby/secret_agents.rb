@@ -17,9 +17,9 @@ def encrypt(str)
     return str
 end
 
-puts "Please enter a string."
-str = gets.chomp
-puts encrypt(str)
+# puts "Please enter a string."
+# str = gets.chomp
+# puts encrypt(str)
 
 # define decrypt method and declare parameter for string
 def decrypt(str)
@@ -39,13 +39,39 @@ def decrypt(str)
     str
 end
 
-puts "Please enter a string."
-str_2 = gets.chomp
-puts decrypt(str_2)
+# puts "Please enter a string."
+# str_2 = gets.chomp
+# puts decrypt(str_2)
 
-puts "Nested method:"
-puts decrypt(encrypt("swordfish"))
+# puts "Nested method:"
+# puts decrypt(encrypt("swordfish"))
 =begin
     Return value of encrypt("swordfish") passed as argument to decrypt.
     Last line of methods must not be puts, otherwise return value will be nil.
 =end
+
+# Ask secret agent for password.
+puts "Welcome to encrypt/decrypt program."
+puts "Please enter your name: "
+name = gets.chomp
+
+puts "Please enter your password: "
+password = gets.chomp
+
+# Ask to encrypt or decrypt password.
+puts "Please select a method: encrypt(1) or decrypt(2)"
+password_method = gets.chomp.to_i
+if password_method == 1
+    result = encrypt(password)
+elsif password_method == 2
+    result = decrypt(password)
+else
+    puts "Input is not correct."
+    exit
+end
+# Call relevant method.
+
+# Print output to screen.
+puts "Agent Name: #{name}"
+puts "Agent's New Password: #{result}"
+# Exit
