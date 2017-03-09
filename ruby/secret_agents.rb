@@ -14,12 +14,12 @@ def encrypt(str)
         end
         index += 1
     end
-    puts str
+    return str
 end
 
 puts "Please enter a string."
 str = gets.chomp
-encrypt(str)
+puts encrypt(str)
 
 # define decrypt method and declare parameter for string
 def decrypt(str)
@@ -36,10 +36,16 @@ def decrypt(str)
 # for each character, retrieve previous character in alphabet string (.index)
         index += 1
     end
-# if space, no change
-    puts str
+    str
 end
 
 puts "Please enter a string."
 str_2 = gets.chomp
-decrypt(str_2)
+puts decrypt(str_2)
+
+puts "Nested method:"
+puts decrypt(encrypt("swordfish"))
+=begin
+    Return value of encrypt("swordfish") passed as argument to decrypt.
+    Last line of methods must not be puts, otherwise return value will be nil.
+=end
