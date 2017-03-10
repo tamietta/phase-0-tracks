@@ -7,10 +7,9 @@
 
 **Short Code**
 
-* The line:
-> Good workflow can feel like a lot of extra effort, but that's nothing compared to the effort of spending six hours wringing your hands over your broken code. Develop the discipline to code carefully and methodically, and life will be much more pleasant."
+* The line below couldn't be more true, and deserved regular reference:
 
-couldn't be more true.
+> Good workflow can feel like a lot of extra effort, but that's nothing compared to the effort of spending six hours wringing your hands over your broken code. Develop the discipline to code carefully and methodically, and life will be much more pleasant."
 
 * The habit of iteratively testing code as you write, and making sure to write only one or a few lines of code at time before testing saves frustration later on.
 
@@ -19,7 +18,7 @@ couldn't be more true.
 * Committing code regularly as a strategy to improve or debug code increments highlights another indispensible utility of Git.
 * Seen in this way, a feature branch or debug branch can be a way of not just saving fully-stable, updated versions of a code, but also tracking the process building a bug-free code.
 
-** `p` versus `puts` as Debug Statement **
+`p` **versus** `puts` **as Debug Statement**
 
 * It can feel more instinctive to use `puts` to print to the console, rather than `p`, which prints code in its literal form, and returns the value. 
 * This is crucial to preserving functions as return-value functions, as opposed to inadvertently turning them into side-effect functions.
