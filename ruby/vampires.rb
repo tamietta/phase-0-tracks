@@ -4,7 +4,7 @@ total = gets.chomp.to_i
 total.times do
 
     puts "Please enter your name."
-    name = gets.chomp.capitalize
+    name = gets.chomp.downcase
 
     puts "Please enter your age."
     age = gets.chomp.to_i
@@ -20,7 +20,7 @@ total.times do
     puts "Would you like to enroll in the company's health insurance plan? Please enter 'Y' for yes, and 'N' for no."
     wants_health_insurance = (gets.chomp.upcase == "Y" ? true : false)
 
-    puts "Please enter an existing allergy one at a time. If at any point, you no longer have any remaining allergies, please enter 'Done'."
+    puts "Please enter an existing allergy one at a time. When you no longer have any remaining allergies, please enter 'Done'."
 
     n = 1
     sunshine_allergy = false
@@ -29,6 +29,7 @@ total.times do
         user_input = gets.chomp.capitalize
         if user_input == "Sunshine"
             sunshine_allergy = true
+            break
         end
         n += 1
     end until user_input == "Done"
@@ -47,11 +48,12 @@ total.times do
     if !correct_age && !likes_garlic && !wants_health_insurance
         result = "Almost certainly a vampire."
     end
-    if name == "Drake Cula" || name == "Tu Fang"
+    if name == "drake cula" || name == "tu fang"
         result = "Definitely a vampire."
     end   
 
     puts result
+    puts correct_age, likes_garlic, wants_health_insurance, sunshine_allergy, name
 
 end
 
