@@ -1,6 +1,6 @@
-arr  = [42, 89, 23, 1]
+# SEARCH ARRAY METHOD
 
-def search(array, integer)
+def search_array(array, integer)
     return_index = nil
     array.length.times do |idx|
       if array[idx] == integer
@@ -10,7 +10,15 @@ def search(array, integer)
     return_index
 end
 
-p search(arr, 10)
+# TEST CODE
+
+arr  = [42, 89, 23, 1]
+
+p search_array(arr, 89) == 1
+p search_array(arr, 10) == nil
+
+
+# FIBONACCI METHOD
 
 def fib(n)
   fib_array = [0, 1]
@@ -27,12 +35,16 @@ def fib(n)
   fib_array
 end
 
-p fib(1)
-p fib(2)
-p fib(3)
-p fib(6)
+# TEST CODE
+
+p fib(1) == [0]
+p fib(2) == [0,1]
+p fib(3) == [0,1,1]
+p fib(6) == [0,1,1,2,3,5]
 p (fib(100)[-1] == 218922995834555169026)
 
+
+# BUBBLE SORT METHOD
 
 # Pseudocode
 # Define a method that takes an array as parameter
@@ -48,14 +60,16 @@ def bubble_sort (array)
         min = array[i+1]
         array[i] = min
         array[i+1] = max
+        # simultaneous assignment version
+        # array[i], array[i + 1] = array[i + 1], array[i]
       end
     end
   end
   array
 end
 
-puts bubble_sort([3,2,5,1,10,4,6,72,2,15])
+# TEST CODE
 
+a = [3,2,5,1,10,4,6,72,2,15]
 
-
-
+p bubble_sort(a) == a.sort
