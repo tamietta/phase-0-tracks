@@ -1,0 +1,51 @@
+PSEUDOCODE
+
+GAME FLOW
+
+Input secret word to start game.
+Word state set to hide all characters.
+Guess count set to secret word length.
+Tracked guesses set to empty.
+
+While secret word is not equal to word state 
+or guess count is great than zero   :
+  Take in guessed letter.
+  If guess is duplicated:
+    Indicate duplicate.
+    Display word state.
+    Skip rest of code. Restart loop.
+  Else:
+    Add letter to tracked guesses.
+
+  If guess correct:
+     Update word state.
+     Display word state.
+     Display remaining guess
+  Else:
+     Increment guess count.
+     Display word state.
+     Display remaining guesses.
+
+If secret word is equal to word state:
+  Print congratulation message.
+Else:
+  Pring losing message.
+
+
+CLASSES
+    - WordGame
+
+INSTANCE VARIABLES
+    - Secret Word
+    - Word State (r)
+    - Max Guess (r)
+    - Guess Count (r)
+    - Tracked Guesses
+
+INSTANCE METHODS
+    - Create word state
+    - Test guess in secret word
+    - Test guess against tracked guesses
+    - Update tracked guesses
+    - Update word state
+    - Decrement guess count
