@@ -9,43 +9,55 @@
 require_relative 'word-game'
 
 describe WordGame do
-  # Initiliase WordGame instance for each test
-  let(:wordgame) { WordGame.new("secret") }
 
-  it "initialises instance with secret word" do
-    expect(wordgame.secret).to eq "secret" 
+  context "when initalised" do
+
+    # Initiliase WordGame instance for each test that references 'wordgame'.
+    let(:wordgame) { WordGame.new("secret") }
+
+    it "stores secret word" do
+      expect(wordgame.secret).to eq "secret" 
+    end
+
+    it "sets guess count to secret word length" do
+      expect(wordgame.guess_count).to eq "secret".length
+    end
+
+    it "hides all letters in word state" do
+      expect(wordgame.word_state).to eq "_ _ _ _ _ _"
+    end
+
+    it "sets guessed letter to empty array" do
+      expect(wordgame.guesses).to eq []
+    end
+
   end
 
-  it "stores secret word as lowercase" do
-    wordgame_upper = WordGame.new("SECRET")
-    expect(wordgame_upper.secret).to eq "secret"
-  end
+   context "when guess given" do
 
-  it "initialises max guess" do
-    expect(wordgame.max_guess).to eq "secret".length
-  end
+    let(:wordgame) { WordGame.new("secret") }
 
-  it "initialises guess count to zero" do
-    expect(wordgame.guess_count).to eq 0
-  end
+    it "checks if guess correct" do
+      expect(wordgame.check_guess "c").to eq true
+      expect(wordgame.check_guess "f").to eq false
+    end
 
-  it "initialises word state" do
-    expect(wordgame.word_state).to eq "_ _ _ _ _ _"
-  end
+    it "adds guess to past guesses" do
+      expect(wordgame.add_guess "c").to eq ["c"]
+      expect(wordgame.add_guess "d").to eq ["c", "d"]
+    end
 
-  it "tests guess in secret word" do
-    expect(wordgame.test_guess("c")).to eq true
-    expect(wordgame.test_guess("d")).to eq false
-  end
+    it "checks if guess duplicated" do
+      wordgame.add_guess "c"
+      expect(wordgame.duplicate? "e").to eq false
+      expect(wordgame.duplicate? "c").to eq true 
+    end
 
-  it "tests if guess in tracked guesses" do
-    wordgame_dup = WordGame.new("secret")
-    expect(wordgame_dup.duplicate("c")) == false
-  end
+    # it "updates word state" do
+    #   expect(wordgame_test.update_word_state "c").to eq "_ _ c _ _ _"
+    #   expect(word_test.update_word_state "d").to eq
+    # end
 
-  it "adds guess to tracked guesses"
-    updated = wordgame.update_guesses("c")
-    expect(updated.include? "c").to eq true
   end
 
 end

@@ -22,7 +22,7 @@ or guess count is great than zero   :
      Display word state.
      Display remaining guess
   Else:
-     Increment guess count.
+     Decrement guess count.
      Display word state.
      Display remaining guesses.
 
