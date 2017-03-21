@@ -16,4 +16,8 @@ class WordGame
     @guesses << guess
   end
 
+  def duplicate?(guess)
+    @guesses.include guess
+  end
+
 end
