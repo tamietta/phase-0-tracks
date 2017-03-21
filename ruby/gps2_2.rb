@@ -78,9 +78,43 @@ add_item(grocery_list, “tomatoes”, 3)
 add_item(grocery_list, “onions”, 1)
 add_item(grocery_list, “ice cream”, 4)
 print_list(grocery_list)
+
 puts ‘-’ * 40
+
 remove_item(grocery_list, “lemonade”)
 print_list(grocery_list)
+
 puts ‘-’ * 40
+
 update_quantity(grocery_list, “ice cream”, 1)
 print_list(grocery_list)
+
+=begin
+
+What did you learn about pseudocode from working on this challenge? 
+- The style format of pseudocode.
+  - Upper case for indentation keywords (IF, ELSE, WHILE, etc.)
+  - Non-language specific terminology
+  - Generalise algorithm to aid flexiblity in coding algorithm, and later refactoring
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+- Arrays are simpler, but hash keys allow for clearer identification of categories of values.
+
+What does a method return?
+- The object returned by the execution of a method's last line code.
+
+What kind of things can you pass into methods as arguments?
+- Variables
+- Literals
+- Return value of method calls
+- Blocks for methods which support them
+
+How can you pass information between methods?
+- Passing one method call as argument to another method call
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+- Using snake case instead of camel case for Ruby method names.
+- Methods are defined in code sequence. Thus a method called by another must be defined before the other.
+- Methods should return a value, if it is to be passed to another as argument.
+
+=end
