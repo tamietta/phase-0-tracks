@@ -1,13 +1,20 @@
 # Method to print a list and make it look pretty
 # input: list
 # steps:
-  # FOR each key-value pair in list
-    # print in format: "item: quantity"
+  # IF empty
+    # print empty message
+  # ELSE
+    # FOR each key-value pair in list
+      # print in format: "item: quantity"
 # output: hil
 
 def print_list(list)
   puts "Your grocery list:"
-  list.each { |item, quantity| puts "#{item}: #{quantity}" }
+  if list.empty?
+    puts "Your list is empty."
+  else
+    list.each { |item, quantity| puts "#{item}: #{quantity}" }
+  end
 end
 
 # Method to create a list
@@ -22,9 +29,9 @@ end
 # output: hash
 
 def create_list(items)
-  list - {}
+  list = {}
   items.split.each { |item| list[item] = 1}
-  print_list
+  print_list(list)
   list
 end
 
@@ -38,7 +45,7 @@ end
 # output: updated hash
 
 def add_item(list, item, quantity=1)
-  { list.include?(item) ? list[item] += quantity : list[item] = quantity }
+  list.include?(item) ? list[item] += quantity : list[item] = quantity
   list
 end
 
@@ -71,12 +78,12 @@ def update_quantity(list, item, quantity)
   list
 end
 
-# Test code for release 2
-grocery_list = create_list(“”)
-add_item(grocery_list, “lemonade”, 2)
-add_item(grocery_list, “tomatoes”, 3)
-add_item(grocery_list, “onions”, 1)
-add_item(grocery_list, “ice cream”, 4)
+# TEST CODE
+grocery_list = create_list("")
+add_item(grocery_list, "lemonade", 2)
+add_item(grocery_list, "tomatoes", 3)
+add_item(grocery_list, "onions", 1)
+add_item(grocery_list, "ice cream", 4)
 print_list(grocery_list)
 
 puts ‘-’ * 40
