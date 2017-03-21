@@ -1,88 +1,86 @@
 # Method to print a list and make it look pretty
-def print_list(list)
 # input: list
 # steps:
- # iterate through the list and print out items and quantities
-  list.each { |item, quantity| puts "#{item}: #{quantity}" }
-   # item: quantity
-# output: printed list in a nice format
-end
+  # FOR each key-value pair in list
+    # print in format: "item: quantity"
+# output: hil
 
+def print_list(list)
+  puts "Your grocery list:"
+  list.each { |item, quantity| puts "#{item}: #{quantity}" }
+end
 
 # Method to create a list
-# input: string of items separated by spaces (example: “carrots apples cereal pizza”)
-def create_list(str)
-  grocery_list = {}
-# steps:
- # split input into array
- str_array = str.split
- # iterate array and add each item to hash
- str_array.each { |item| grocery_list[item] = 1 }
- # set default quantity
- # print the list using print method and passing in hash
- # print_list(grocery_list)
-# output: return the created hash
- grocery_list
-end
+# input: string of items separated by spaces (example: "carrots apples cereal pizza")
+# steps: 
+  # create list as empty hash.
+  # split string into items, and store as elements in array.
+  # FOR each item
+    # set as hash key
+    # assign default value of 1
+  # print hash as list
+# output: hash
 
-# puts create_list("apples pears cherries")
+def create_list(items)
+  list - {}
+  items.split.each { |item| list[item] = 1}
+  print_list
+  list
+end
 
 # Method to add an item to a list
-def add_item(list, item_name, quantity=1)
 # input: list, item name, and optional quantity
 # steps:
- # check IF item is included in list
-  if list.include? item_name
-   # increment item by quantity
-    list[item_name] += quantity
-   # ELSE - set item as new key and assign it to quantity as value
-  else
-    list[item_name] = quantity
-  end
-# output: return the updated hash
-  puts "Here is your updated list:"
-  p list
-end
+  # IF item in list
+    # increment original quantity with new quantity
+  # ELSE
+    # set item as hash key, and assign to quantity
+# output: updated hash
 
-test_list = create_list("apples pears cherries")
-# add_item(test_list, "peaches", 3)
-# test_list
+def add_item(list, item, quantity=1)
+  { list.include?(item) ? list[item] += quantity : list[item] = quantity }
+  list
+end
 
 # Method to remove an item from the list
-def remove_item(list, item_name)
-# input: list, item name
+# input: list, item
 # steps:
- # check IF item is included in list
-  if list.include? item_name
-   # delete the item
-    list.delete(item_name)
-   # ELSE, print a message to the user
-  else
-    puts "No #{item_name} on the list."
-  end
-# output: return updated hash or the original hash
+  # IF item in list
+    # remove item from list
+  # ELSE
+    # print no item message
+# output: updated or original list
+
+def remove_item(list, item)
+  # when can no brackets? what parsed without brackets
+  list.include?(item) ? list.delete(item) : puts("No #{item} in the list.")
   list
 end
-
-# puts remove_item(test_list, "cars")
 
 # Method to update the quantity of an item
-def update_quantity(list, item_name, quantity)
-# input: list, item name, new quantity
+# input: list, item, quantity
 # steps:
- # check IF item is included in list
- if list.include? item_name
-   # update the item’s quantity
-   list[item_name] = quantity
-   # ELSE, print a message to the user
-  else
-    puts "No #{item_name} on the list."
-  end
-# output: return the updated hash or the original hash
+  # IF item in list
+    # set item key to new quantity
+  # ELSE
+    # print no item message
+# output: updated or original list
+
+def update_quantity(list, item, quantity)
+  list.include?(item) ? list[item] = quantity : puts("No #{item} in the list.")
   list
 end
 
-# puts update_quantity(test_list, "cars", 4)
-
-
-print_list(test_list)
+# Test code for release 2
+grocery_list = create_list(“”)
+add_item(grocery_list, “lemonade”, 2)
+add_item(grocery_list, “tomatoes”, 3)
+add_item(grocery_list, “onions”, 1)
+add_item(grocery_list, “ice cream”, 4)
+print_list(grocery_list)
+puts ‘-’ * 40
+remove_item(grocery_list, “lemonade”)
+print_list(grocery_list)
+puts ‘-’ * 40
+update_quantity(grocery_list, “ice cream”, 1)
+print_list(grocery_list)
