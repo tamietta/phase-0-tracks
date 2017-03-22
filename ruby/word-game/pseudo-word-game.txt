@@ -36,16 +36,15 @@ CLASSES
     - WordGame
 
 INSTANCE VARIABLES
-    - Secret Word
+    - Secret Word (r)
     - Word State (r)
-    - Max Guess (r)
     - Guess Count (r)
-    - Tracked Guesses
+    - Tracked Guesses (r)
 
 INSTANCE METHODS
     - Create word state
-    - Test guess in secret word
-    - Test guess against tracked guesses
-    - Update tracked guesses
+    - Test correct guess
+    - Test if guess duplicated
+    - Add guess to tracked guesses
     - Update word state
     - Decrement guess count

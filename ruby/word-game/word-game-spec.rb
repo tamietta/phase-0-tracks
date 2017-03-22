@@ -26,7 +26,7 @@ describe WordGame do
     end
 
     it "hides all letters in word state" do
-      expect(wordgame.word_state).to eq "_ _ _ _ _ _"
+      expect(wordgame.word_state).to eq ["_", "_", "_", "_", "_", "_"]
     end
 
     it "sets guessed letter to empty array" do
@@ -48,15 +48,33 @@ describe WordGame do
     end
 
     it "checks if guess duplicated" do
-      wordgame.add_guess "c"
+      class << wordgame
+        attr_writer :guesses
+      end
+      wordgame.guesses = ["c"]
       expect(wordgame.duplicate? "e").to eq false
       expect(wordgame.duplicate? "c").to eq true 
     end
 
-    # it "updates word state" do
-    #   expect(wordgame_test.update_word_state "c").to eq "_ _ c _ _ _"
-    #   expect(word_test.update_word_state "d").to eq
-    # end
+    it "decrements guess count" do
+      expect(wordgame.decrement_guess_count).to eq 5
+      expect(wordgame.decrement_guess_count).to eq 4
+    end
+
+    it "displays word state" do
+      def wordgame.new_word_state
+        @word_state = ["_", "_", "_", "_", "_", "t"]
+      end
+      expect(wordgame.display_word_state).to eq "_ _ _ _ _ _"
+      wordgame.new_word_state
+      expect(wordgame.display_word_state).to eq "_ _ _ _ _ t"
+    end
+
+    it "updates word state" do
+      expect(wordgame.update_word_state "c").to eq "_ _ c _ _ _"
+      expect(wordgame.update_word_state "d").to eq "_ _ c _ _ _"
+      expect(wordgame.update_word_state "e").to eq "_ e c _ e _"
+    end
 
   end
 

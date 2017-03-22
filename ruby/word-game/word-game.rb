@@ -4,7 +4,7 @@ class WordGame
   def initialize(secret)
     @secret = secret
     @guess_count = secret.length
-    @word_state = (["_"] * secret.length).join(" ")
+    @word_state = ["_"] * secret.length 
     @guesses = []
   end
 
@@ -12,12 +12,31 @@ class WordGame
     @secret.include? guess
   end
 
+  def duplicate?(guess)
+    @guesses.include? guess
+  end
+
   def add_guess(guess)
     @guesses << guess
   end
 
-  def duplicate?(guess)
-    @guesses.include guess
+  def decrement_guess_count
+    @guess_count -= 1
   end
+
+  def display_word_state
+    @word_state.join(" ")
+  end
+
+  def update_word_state(guess)
+    @secret.chars.each_with_index do |letter, idx|
+      if guess == letter
+        @word_state[idx] = letter
+      end
+    end
+    display_word_state
+  end
+
+
 
 end
