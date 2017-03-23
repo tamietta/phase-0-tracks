@@ -38,13 +38,8 @@ describe WordGame do
    context "when guess given" do
 
     it "checks if guess correct" do
-      expect(wordgame.check_guess "c").to eq true
-      expect(wordgame.check_guess "f").to eq false
-    end
-
-    it "adds guess to past guesses" do
-      expect(wordgame.add_guess "c").to eq ["c"]
-      expect(wordgame.add_guess "d").to eq ["c", "d"]
+      expect(wordgame.guess_correct? "c").to eq true
+      expect(wordgame.guess_correct? "f").to eq false
     end
 
     it "checks if guess duplicated" do
@@ -56,9 +51,19 @@ describe WordGame do
       expect(wordgame.duplicate? "c").to eq true 
     end
 
-    it "decrements guess count" do
-      expect(wordgame.decrement_guess_count).to eq 5
-      expect(wordgame.decrement_guess_count).to eq 4
+    it "adds guess to past guesses" do
+      expect(wordgame.add_guess "c").to eq ["c"]
+      expect(wordgame.add_guess "d").to eq ["c", "d"]
+    end
+
+    it "updates guess count" do
+      def wordgame.zero_guess_count
+        @guess_count = 0
+      end
+      expect(wordgame.update_guess_count("d")).to eq 5
+      expect(wordgame.update_guess_count"c").to eq 5
+      wordgame.zero_guess_count
+      expect(wordgame.update_guess_count("a")).to eq 0
     end
 
     it "displays word state" do
@@ -79,3 +84,5 @@ describe WordGame do
   end
 
 end
+
+# QUERY: how to test user interface program
