@@ -1,4 +1,3 @@
-# TO DO: #win_game?
 class WordGame
   attr_reader :secret, :guess_count, :word_state, :guesses
 
@@ -38,16 +37,12 @@ class WordGame
   end
 
   
-  # METHOD: update remaining guess count if incorrect, unduplicated, and guess count not zero
-  # INPUT: guessed letter as string
+  # METHOD: update remaining guess count
+  # INPUT: N/A
   # OUTPUT: integer of remaining guesses
   
-  def update_guess_count(guess)
-    if !guess_correct?(guess) && @guess_count > 0
-      @guess_count -= 1
-    else
-      @guess_count
-    end
+  def update_guess_count
+    @guess_count > 0 ? @guess_count -= 1 : @guess_count
   end
   
   # METHOD: display word state
@@ -58,18 +53,21 @@ class WordGame
     @word_state.join(" ")
   end
   
-  # METHOD: update (and display) word state
-  # INPUT: guessed letter as string
-  # OUTPUT: updated word state as string
+  # METHOD: update word state with most recently added guess
+  # INPUT: N/A
+  # OUTPUT: updated word state
   
-  def update_word_state(guess)
-    @secret.chars.each_with_index do |letter, idx|
-      if guess == letter
-        @word_state[idx] = letter
-      end
+  def update_word_state
+    @secret.chars.each_with_index do |letter, idx| 
+      @word_state[idx] = letter if @guesses[-1] == letter
     end
-    display_word_state
+    @word_state
   end
+
+  def game_win?
+    @secret == @word_state.join
+  end
+
 end
 
 # USER INTERFACE
@@ -83,7 +81,8 @@ wordgame = WordGame.new(secret)
 
 puts "Player #2, the secret word has #{wordgame.secret.length} letters."
 
-while wordgame.guess_count > 0 do
+while wordgame.guess_count > 0 && !wordgame.game_win? do
+
   puts "\nSecret Word: " + wordgame.display_word_state
 
   puts "You have #{wordgame.guess_count} guesses left."
@@ -98,7 +97,16 @@ while wordgame.guess_count > 0 do
     puts "Correct guess!"
   else
     puts "Sorry, #{guess.inspect} is not in the secret word."  
-    wordgame.update_guess_count(guess)
+    wordgame.update_guess_count
   end
   wordgame.add_guess(guess)
-# end
+  wordgame.update_word_state
+
+end
+
+if wordgame.game_win?
+  puts "Congratulations! You guessed the secret word!"
+else
+  puts "You have run out of guesses."
+  puts "Game over."
+end
