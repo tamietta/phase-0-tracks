@@ -11,6 +11,7 @@ require_relative 'state_data'
 class VirusPredictor
 
   # METHOD: initialize instance attributes
+  
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -18,29 +19,48 @@ class VirusPredictor
   end
 
   # METHOD: calls predicted_deaths and speed_of_spread methods 
+  
   def virus_effects
     predicted_deaths
     speed_of_spread
   end
 
   # KEYWORD: code below is inaccessible from outside the class
-  # private
+  
+  private
 
-  # METHOD: calculates number_of_deaths as a percentage of population
-  # based on population density 
+  def density_range
+    case @population_density
+    when 0...50 then 0
+    when 50...100 then 50
+    when 100...150 then 100
+    when 150...200 then 150
+    else 200
+    end
+  end
+
+  # METHOD: uses population density to calculate number of deaths as a 
+  #         percentage of population
+  
   def predicted_deaths
     # predicted deaths is solely based on population density
 
-    # percentage = [[(@population_density / 500.0).round(1), 0.4].min, 0.05].max
-
-    if @population_density >= 200
-      percentage = 0.4
-    elsif @population_density < 50
+    if density_range < 50
       percentage = 0.05
     else
-      percentage = (@population_density / 50) / 10.0
+      percentage / 500.0
+    end
 
-    number_of_deaths = (@population * percentage).floor
+    # percentage = [[(@population_density / 500.0).round(1), 0.4].min, 0.05].max
+
+    # if @population_density >= 200
+    #   percentage = 0.4
+    # elsif @population_density < 50
+    #   percentage = 0.05
+    # else
+    #   percentage = (@population_density / 50) / 10.0
+
+    # number_of_deaths = (@population * percentage).floor
 
     # if @population_density >= 200
     #   number_of_deaths = (@population * 0.4).floor
