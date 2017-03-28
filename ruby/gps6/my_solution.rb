@@ -1,11 +1,11 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with Marco Marin.
+# We spent 3 hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Loads the state_data.rb using the path relative
+# to the directory of the current file.
 require_relative 'state_data'
 
 class VirusPredictor
@@ -28,6 +28,11 @@ class VirusPredictor
   # KEYWORD: code below is inaccessible from outside the class
   private
 
+=begin
+
+  METHOD: (related to REFACTOR VERSION #2) returns an index value
+  for a certain population density value
+
   def density_index
     case @population_density
     when 0...50 then 0
@@ -37,6 +42,8 @@ class VirusPredictor
     else 4
     end
   end
+
+=end
 
   # METHOD: uses population density to calculate number of deaths as a 
   #         percentage of the population
@@ -65,13 +72,20 @@ class VirusPredictor
     percentage = [[((@population_density / 50) / 10.0), 0.4].min, 0.05].max
     number_of_deaths = (@population * percentage).floor
 
-=end
-
-    # REFACTOR: VERSION #2
+    REFACTOR: VERSION #2 (using #density_index)
 
     percentage = [0.05, 0.1, 0.2, 0.3, 0.4]
 
     number_of_deaths = (@population * percentage[density_index]).floor
+
+=end
+
+    # REFACTOR: VERSION #3 (with Marco Marin)
+
+    { 200 => 0.4, 150 => 0.3, 100 => 0.2, 50 => 0.1, 0 => 0.05 }.each do |density, scale|
+      number_of_deaths = (@population * scale).floor if @population_density >= density
+      break
+    end
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -110,13 +124,20 @@ class VirusPredictor
       speed = 2.5 - ((@population_density / 50) * 0.5)
     end
 
-=end
-
-    # REFACTOR VERSION #2
+    REFACTOR VERSION #2
 
     speed_scale = [2.5, 2.0, 1.5, 1.0, 0.5]
 
     speed = speed_scale[density_index]
+
+=end
+
+    # REFACTOR: VERSION #3 (with Marco Marin)
+  
+    { 200 => 0.5, 150 => 1, 100 => 1.5, 50 => 2, 0 => 2.5 }.each do |density, scale|
+      speed = scale if @population_density >= density
+      break
+    end
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
