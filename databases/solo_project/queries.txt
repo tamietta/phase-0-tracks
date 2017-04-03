@@ -1,0 +1,155 @@
+COMMAND: Display the information in one table.
+
+SQL: SELECT * FROM cities;
+
+OUTPUT: 
+
+1|Kyoto|1.459|false|2
+2|Marseilles|0.852|false|1
+3|Khartoum|5.185|true|3
+4|Paris|12.005|true|1
+5|Tokyo|13.617|true|2
+6|Omdurman|2.395|false|3
+
+
+COMMAND: Update an item that meets some condition.
+
+SQL: UPDATE cities SET name = "MARSEILLES" WHERE name = "Marseilles";
+     SELECT * FROM cities;
+
+OUTPUT: 
+
+1|Kyoto|1.459|false|2
+2|MARSEILLES|0.852|false|1
+3|Khartoum|5.185|true|3
+4|Paris|12.005|true|1
+5|Tokyo|13.617|true|2
+6|Omdurman|2.395|false|3
+
+
+COMMAND: Display the information in both tables using one query.
+
+SQL: SELECT * FROM cities, countries WHERE cities.country = countries.id;
+
+OUTPUT: 
+
+1|Kyoto|1.459|false|2|2|Japan
+2|MARSEILLES|0.852|false|1|1|France
+3|Khartoum|5.185|true|3|3|Sudan
+4|Paris|12.005|true|1|1|France
+5|Tokyo|13.617|true|2|2|Japan
+6|Omdurman|2.395|false|3|3|Sudan
+
+
+COMMAND: Display a narrower selection of columns from both tables using one query.
+
+SQL: SELECT cities.name, cities.population, cities.capital, countries.name
+   ...> FROM cities
+   ...> JOIN countries
+   ...> ON cities.country = countries.id;
+
+OUTPUT: 
+
+yoto|1.459|false|Japan
+MARSEILLES|0.852|false|France
+Khartoum|5.185|true|Sudan
+Paris|12.005|true|France
+Tokyo|13.617|true|Japan
+Omdurman|2.395|false|Sudan
+
+
+COMMAND: Delete an item that meets some condition.
+
+SQL: DELETE FROM cities WHERE name = "Omdurman";
+     SELECT * FROM cities;
+
+OUTPUT:
+
+1|Kyoto|1.459|false|2
+2|MARSEILLES|0.852|false|1
+3|Khartoum|5.185|true|3
+4|Paris|12.005|true|1
+5|Tokyo|13.617|true|2
+
+
+COMMAND: Display both tables, joined one condition, and filtered by another condition.
+
+SQL: SELECT * FROM cities
+   ...> JOIN countries ON cities.country = countries.id
+   ...> WHERE countries.id = 1;
+
+OUTPUT:
+
+2|MARSEILLES|0.852|false|1|1|France
+4|Paris|12.005|true|1|1|France
+
+
+COMMAND: Display both tables, by left-joining one onto another.
+
+SQL: SELECT cities.name, cities.country, countries.name
+   ...> FROM cities
+   ...> LEFT JOIN countries ON cities.id  = countries.id;
+
+OUTPUT:
+
+Kyoto|2|France
+MARSEILLES|1|Japan
+Khartoum|3|Sudan
+Paris|1|
+Tokyo|2|
+
+SQL: SELECT *
+   ...> FROM countries
+   ...> LEFT JOIN cities ON countries.id = cities.country;
+
+OUTPUT:
+
+1|France|2|MARSEILLES|0.852|false|1
+1|France|4|Paris|12.005|true|1
+2|Japan|1|Kyoto|1.459|false|2
+2|Japan|5|Tokyo|13.617|true|2
+3|Sudan|3|Khartoum|5.185|true|3
+
+
+COMMAND: Inner join the two tables, and display a subset of columns.
+
+SQL: SELECT cities.id, cities.name, countries.id, countries.name
+   ...> FROM cities
+   ...> INNER JOIN countries ON cities.id = countries.id;
+
+OUTPUT: 
+
+1|Kyoto|1|France
+2|MARSEILLES|2|Japan
+3|Khartoum|3|
+
+
+COMMAND: Join two tables, and display a subset of columns, sorted by a particular column.
+
+SQL: SELECT cities.name, countries.name, cities.capital
+   ...> FROM cities
+   ...> JOIN countries ON cities.country = countries.id
+   ...> ORDER BY countries.name;
+
+OUTPUT:
+
+MARSEILLES|France|false
+Paris|France|true
+Kyoto|Japan|false
+Tokyo|Japan|true
+Khartoum|Sudan|true
+
+
+COMMAND: Join two tables, and display a subset of columns, filtered by a condition.
+
+SQL: SELECT countries.name, cities.name, cities.population
+   ...> FROM cities
+   ...> JOIN countries ON cities.country = countries.id
+   ...> WHERE countries.name = "Japan" OR countries.name = "France";
+
+OUTPUT:
+
+Japan|Kyoto|1.459
+France|MARSEILLES|0.852
+France|Paris|12.005
+Japan|Tokyo|13.617
