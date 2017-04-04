@@ -1,0 +1,48 @@
+COMMAND: Join three tables.
+
+SQL: SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name
+   ...> FROM reviews
+   ...> JOIN businesses ON reviews.business_id = businesses.id
+   ...> JOIN users ON reviews.user_id = users.id;
+
+OUTPUT
+
+3.5|Sushi not bad|Sushi World|Merle|Streep
+3|Overpriced|Amir's Towing|Denzel|De Como
+5|Sublime|Lotus Yoga|Angela|Jolie
+4|The kids enjoyed this.|Sushi World|Angela|Jolie
+4.5|Wish I'd gotten married here.|Grundy Hollow Wedding Chapel|Bradford|Pitt
+4|Darling, little chapel.|Grundy Hollow Wedding Chapel|Merle|Streep
+3.5|Good, but too advanced.|Lotus Yoga|Denzel|De Como
+
+
+COMMAND: Choose to view just the user's names, the business name, the star rating, and the comment.
+
+SQL: ELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> FROM users
+   ...> JOIN reviews ON users.id = reviews.user_id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+
+OUTPUT:
+
+Merle|Streep|Sushi World|3.5|Sushi not bad
+Denzel|De Como|Amir's Towing|3|Overpriced
+Angela|Jolie|Lotus Yoga|5|Sublime
+Angela|Jolie|Sushi World|4|The kids enjoyed this.
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4.5|Wish I'd gotten married here.
+Merle|Streep|Grundy Hollow Wedding Chapel|4|Darling, little chapel.
+Denzel|De Como|Lotus Yoga|3.5|Good, but too advanced.
+
+
+COMMAND: View the data of all three tables for just one particular business.
+
+SQL: SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> FROM businesses
+   ...> JOIN reviews ON reviews.business_id = businesses.id
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> WHERE businesses.name = "Grundy Hollow Wedding Chapel";
+
+OUTPUT:
+
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4.5|Wish I'd gotten married here.
+Merle|Streep|Grundy Hollow Wedding Chapel|4|Darling, little chapel.
