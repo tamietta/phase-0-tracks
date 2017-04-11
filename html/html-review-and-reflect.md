@@ -1,4 +1,4 @@
-**Briefly describe your understanding of what the browser does, including definitions of the following:**
+  **Briefly describe your understanding of what the browser does, including definitions of the following:**
 
 *   Browser
     -   A browser is a software application that enables access to the World Wide Web. It does so by retrieving, interpreting and sending data across the internet.
