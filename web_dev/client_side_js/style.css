@@ -1,0 +1,158 @@
+body {
+    background-image: url(http://il6.picdn.net/shutterstock/videos/9372677/thumb/1.jpg);
+    background-size: cover; 
+}
+
+main {
+    background-color: white;
+    border-radius: 20px;
+    width: 85%;
+    margin: 30px auto;
+    text-align: center;
+    font-family: 'Iowan Old Style';
+}
+
+section.title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+h1, h2 {
+    font-family: 'Tangerine';
+    font-size: 2.5em;
+}
+
+section.title img{
+    padding-top: 10px;
+    height: 50%;
+    width: 60%;
+}
+
+#index-nian img {
+    position: relative;
+    left: 10px;
+    width: 40%;
+}
+
+#index-fish img {
+    position: relative;
+    left: 10px;
+    width: 55%;
+}
+
+#ingredients ul {
+    text-align: left;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+}
+
+
+a.site-link {
+    display: block;
+    background-color: pink;
+    height: 30px;
+    width: 60px;
+    margin: 10px auto;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    color: grey;
+}
+
+a:visited {
+    color:  white;
+}
+
+form {
+    padding: 30px 50px;
+}
+
+aside {
+    background-color: lightgrey;
+    border-radius: 20px;
+    width: 55%;
+    margin: 30px auto;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-family: 'Iowan Old Style';
+    font-size: .8em;
+}
+
+p#sample-recipe {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+section.aside-list {
+    margin: 5px auto;
+    width: 80%;
+    padding: 5px;
+}
+
+section.aside-list h6 {
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+section.aside-list ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+aside footer {
+    width: 60%;
+    margin: 0px auto;
+}
+
+@media screen and (max-width: 595px) {
+    body {
+        min-width: 575px
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    main {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+    }
+    h1, h2 {
+        font-size: 5em;
+        font-weight: bold;
+    }
+
+    section img {
+        min-width: 90%;
+    }
+
+    a.site-link {
+        min-width: 30%;
+        min-height: 50px;
+        font-size: 2em;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    #ingredients {
+        font-size: 2em;
+    }
+
+    form {
+        font-size: 3em;
+    }
+
+    fieldset input {
+        min-height: 1.5em;
+        font-size: 1em;
+    }
+
+    button {
+        background-color: pink;
+        font-size: .7em;
+        margin-top: 20px;
+        color: grey;
+    }
+}

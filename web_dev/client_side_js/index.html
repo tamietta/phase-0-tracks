@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chinese New Year Recipes</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <main>
+    <section class='title'>
+      <h1>Welcome to Chinese New Year Recipes</h1>
+      <p>Learn to make two dishes to celebrate the Chinese New Year.</p>
+      <p>Click on the recipe button for each dish to access its recipe, or fill in the form below to get an emailed copy.</p>
+      <img id="index-cny" src="https://c.tadst.com/gfx/750w/chinese-newyear-canada.jpg?1" alt="chinese-new-year">
+    </section>
+
+    <section id="index-nian">
+      <h2>Nian Gao (Chinese New Year Cake)</h2>
+      <img src="nian-gao.jpg" alt="nian gao">
+      <a class="site-link" href="nian-gao.html">Recipe</a>
+    </section>
+
+    <section id="index-fish">
+      <h2>Steamed Fish in Soya Sauce and Ginger</h2>
+      <img src="fish-soya-ginger.jpg" alt="steamed fish in soya sauce and ginger">
+      <a class="site-link" href="fish-soya-ginger.html">Recipe</a>
+    </section>
+
+    <form>
+      <fieldset>
+        <legend>Email Recipe</legend>
+        <p>Please enter the details below to have a copy of the recipe sent to your email address.</p>
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" placeholder="John Smith">
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="john.smith@email.com">
+        </div>
+        <div>
+          <label>Dish Name:</label>
+          <input list="dish" name="dish" placeholder="Dish Name">
+            <datalist id="dish">
+              <option value="Nian Gao (Chinese New Year Cake)">
+              </option>
+              <option value="Steamed Fish in Soya Sauce and Ginger"></option>
+            </datalist>
+        </div>
+        <button type="button">Submit</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <aside>
+    <section>
+      <p id="sample-recipe">This is a sample recipe website: <a href="http://www.angelwongskitchen.com">Angel Wong's Kitchen</a>
+      </p>
+      <section class="aside-list">
+        <h6>Good Points</h6>
+        <ul>
+          <li>Consistent design theme</li>
+          <li>Clean and uncluttered content display</li>
+          <li>Navigation bar at the top allows easy browsing</li>
+        </ul>
+      </section>
+      <section class="aside-list">
+        <h6>Bad Points</h6>
+        <ul>
+          <li>A side bar would highlight old posts better than a bottom bar*</li>
+          <li>A site-wide search bar would improve content access*</li>
+          <li>An embedded, rather than linked, YouTube video would add interactivity</li>
+        </ul>
+      </section>
+    </section>
+    <footer>
+      <span>*For a site with better navigational design, see <a href="http://www.summertomato.com/">Summer Tomato by Darya Rose.</a></span>
+    </footer>
+  </aside>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
