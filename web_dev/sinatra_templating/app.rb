@@ -2,6 +2,8 @@
 require 'sinatra'
 require 'sqlite3'
 
+# add static resources
+# set default static folder for CSS and JS files.
 set :public_folder, File.dirname(__FILE__) + '/static'
 
 db = SQLite3::Database.new("students.db")
@@ -24,4 +26,12 @@ post '/students' do
   redirect '/'
 end
 
-# add static resources
+get '/students/campus_form' do
+  erb :campus_form
+end
+
+post '/students/campus' do
+  @campus = params[:campus]
+  erb :campus
+end
+
