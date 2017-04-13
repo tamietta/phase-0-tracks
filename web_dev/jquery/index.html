@@ -5,34 +5,27 @@
   <title>Index</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="jquery.js" defer></script>
-  <style>
-    .important {
-        font-weight: bold;
-        font-size: xx-large;
-    }
-
-    .blue {
-        color: blue;
-    }
-  </style>
 </head>
 <body>
   <main>
-    <p>Please create a heading dynamically.</p>
-    <img id="panda-photo" src="panda.jpg" alt="panda" style="position:relative">
+    <h1>Use jQuery to change this heading.</h1>
+    <img id="panda-photo" src="panda.jpg" alt="panda"">
     <section id="text">
       <p>Please change this to red.</p>
       <p>Please change this to green.</p>
       <p>Please make this bold.</p>
     </section>
-    <nav>
-      <p>This navigation section is currently empty. Please add some links.</p>
-    </nav>
     <section id="buttons"> 
-      <p>Please change the style these buttons with common properties.</p>
-      <button type="button">Click me!</button>
-      <button type="button">Click me too!</button>
-      <img alt="panda baby" src='http://i.dailymail.co.uk/i/pix/2016/09/08/09/2F3E8F6800000578-3778169-The_royal_animal_Pandas_are_raised_with_extreme_care_in_Chinese_-a-1_1473323494611.jpg' style="display: none">
+      <p>Watch what happens to the panda photo.</p>
+      <button type="button">Panda Photo</button>
+
+      <p>Click to make animate the box below.</p>
+      <button type="button">Animate</button>
+      <div style="background-color: red; height: 100px; width: 100px; margin-top: 20px; position: relative"></div>
+
+      <p>Click to make this box fade in and out.</p>
+      <button type="button">Fade Out</button>
+      <div style="background-color: yellow; height: 100px; width: 100px; margin-top: 20px">
     </section>
   </main>
 </body>

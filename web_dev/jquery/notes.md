@@ -1,8 +1,24 @@
-### Research Strategies for JQuery
+### Reflections: Best Strategies For Time-Constrained Research
 
-**Time Limit: 2 hours**
+- Always start out any exploratory research with a very specific question. **Never** start any research **without a highly limited goal**.
+    + **Example**
+        * What is jQuery?
+        * Why would you use it?
+        * What are the most used methods?
 
-- Look up overview of main features of JQuery. (~15 minutes)
-- Find list of JQuery's common methods. (~15 minutes)
-- Select five methods to read in depth, and try out. (~15 minutes each)
-- Use Pomodoros of 30 minutes, with 5-minute breaks.
+- Be ***highly*** practical. Don't just explore **if you are under a time constraint**.
+
+- Set up a **sample project**, and **create tasks** for yourself. Mimic a simple DBC release.
+    + **Example Tasks**
+        * How do you include jQuery into a HTML file? ... DONE
+        * I want to change the heading. How do I change the heading with jQuery? ... DONE
+        * I want to change the font of this text. How do I do that? ... DONE
+        * I've created a <div> box. I want to animate it. What method do I use? ... DONE
+        
+- Before you begin research under a time constraint, **pre-plan**. Invest in:
+    * Writing out questions.
+    * Creating a sample project.
+    * Crafting **tasks** to complete on that project. 
+
+- Exploratory research for comprehensive knowledge can only be performed if you have abundant time.
+
